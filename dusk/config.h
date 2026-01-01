@@ -593,7 +593,7 @@ static const char *dmenucmd[] = {
 };
 static const char *spcmd_w[] = {"w", "kitty", "--name", "spterm (w)", "--title", "first", NULL };
 static const char *spcmd_e[] = {"e", "kitty", "--name", "spterm (e)", "--title", "second", NULL };
-static const char *spcmd_r[] = {"r", "kitty", "--name", "spfm (r)", "-e", "ranger", NULL };
+static const char *spcmd_r[] = {"r", "kitty", "--name", "spfm (r)", /*"-e", "ranger",*/ NULL };
 static const char *spcmd_t[] = {"t", "Telegram", "--title", "Telegram", NULL };
 static const char *spsteam[] = {"steam", NULL };
 static const char *statusclickcmd[] = { "~/bin/statusbar/statusclick.sh", NULL };
