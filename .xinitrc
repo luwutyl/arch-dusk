@@ -25,9 +25,6 @@ slstatus &
 # для буфера обмена
 clipmenud &
 
-# блок мониторы для тышки
-xpointerbarrier 0 0 0 0
-
 # прозрачность
 picom &
 
