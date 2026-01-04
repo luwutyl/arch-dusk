@@ -335,6 +335,7 @@ static Rule clientrules[] = {
 	{ .class = "firefox", .workspace = "2", .flags = AttachMaster|SwitchWorkspace },
   { .class = "throne", .workspace = "10", .flags = SwitchWorkspace},
   { .class = "Sxiv", .flags = Floating|Centered },
+  { .class = "mpv", .flags = Floating|Centered },
 	{ .class = "Steam", .title = "Steam", .flags = Floating|Centered, .floatpos = "50% 50% 92% 90%" },
 	{ .class = "steam_app_", .flags = SteamGame|Floating|Centered },
 	{ .class = "Google-chrome", .role = "GtkFileChooserDialog", .floatpos = "50% 50%", .flags = AlwaysOnTop|Floating },
