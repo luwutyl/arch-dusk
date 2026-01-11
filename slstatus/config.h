@@ -78,8 +78,11 @@ static const char mic[] = "muted=`wpctl get-volume @DEFAULT_SOURCE@ | awk '{prin
 
 static const struct arg args[] = {
     /* function format          argument */
-//	 { ipv4,          " 󰈀 %s ",      "enp5s0" },
+//	 { ipv4,          "| 󰈀 %s ",      "enp4s0" },
 //	 { wifi_perc,     "|   %s%% ",  "wlan0" },
+   { netspeed_rx,   "/  %s/s ",        "enp4s0" },
+   { netspeed_tx,   " %s/s ",          "enp4s0" },
+   { keymap,        "|  %s ",     NULL },
 	 { cpu_perc,      "|  %s%% ",   NULL },
 	 { ram_perc,      "|  %s%% ",   NULL },
 //	 { battery_perc,  "|  %s%%",    "BAT0" },
