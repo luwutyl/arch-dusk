@@ -14,7 +14,7 @@ static unsigned int attachdefault        = AttachAside; // AttachMaster, AttachA
 
 static int initshowbar                   = 1;   /* 0 means no bar */
 
-static int bar_height                    = 20;   /* 0 means derive from font, >= 1 explicit height */
+static int bar_height                    = 17;   /* 0 means derive from font, >= 1 explicit height */
 static int vertpad                       = 2;   /* vertical (outer) padding of bar */
 static int sidepad                       = 2;   /* horizontal (outer) padding of bar */
 
@@ -91,8 +91,8 @@ static uint64_t functionality = 0
 //	|FlexWinBorders // use the SchemeFlex* color schemes, falls back to SchemeTitle* if disabled
 	|SpawnCwd // spawn applications in the currently selected client's working directory
 	|ColorEmoji // enables color emoji support (removes Xft workaround)
-//	|Status2DNoAlpha // option to not use alpha when drawing status2d status
-//	|BarBorder // draw a border around the bar
+	|Status2DNoAlpha // option to not use alpha when drawing status2d status
+	|BarBorder // draw a border around the bar
 //	|BarBorderColBg // optionally use the bar background colour for the bar border (rather than border colour)
 	|BarPadding // add vertical and side padding as per vertpad and sidepad variables above
 //	|NoBorders // as per the noborder patch, show no border when only one client in tiled mode
@@ -132,7 +132,7 @@ static int flexwintitle_hiddenweight     = 0;  // hidden window title weight
 static int flexwintitle_floatweight      = 0;  // floating window title weight, set to 0 to not show floating windows
 static int flexwintitle_separator        = 0;  // width of client separator
 
-static const char *fonts[]               = { "AnonymicePro Nerd Font:size=13" };
+static const char *fonts[]               = { "AnonymicePro Nerd Font:size=12" };
 static       char dmenufont[60]          = "AnonymicePro Nerd Font:size=13";
 
 static char dmenunormfgcolor[] = "#DCE7F2";
