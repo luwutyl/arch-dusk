@@ -82,7 +82,7 @@ static uint64_t functionality = 0
 //	|SmartGaps // enables no or increased gaps if there is only one visible window
 //	|SmartGapsMonocle // enforces no gaps in monocle layout
 	|Systray // enables a systray in the bar
-//	|SystrayNoAlpha // disables the use of transparency for the systray, enable if you do not use a compositor
+	|SystrayNoAlpha // disables the use of transparency for the systray, enable if you do not use a compositor
 	|Swallow // allows X applications started from the command line to swallow the terminal
 	|SwallowFloating // allow floating windows to swallow the terminal by default
 	|CenteredWindowName // center the window titles on the bar
