@@ -79,6 +79,66 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# Команды
+ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=125,bold'       # 125 — пурпурный оттенок
+ZSH_HIGHLIGHT_STYLES[function]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=133'             # 133 — светло-фиолетовый
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=133,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=white'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=white'
+
+# Аргументы и опции
+ZSH_HIGHLIGHT_STYLES[argument]='fg=129'           # 129 — мягкий фиолетовый
+ZSH_HIGHLIGHT_STYLES[option]='fg=133'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=133'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=133,bold'
+
+# Переменные и присваивания
+ZSH_HIGHLIGHT_STYLES[parameter]='fg=125'
+ZSH_HIGHLIGHT_STYLES[parameter-expansion]='fg=125'
+ZSH_HIGHLIGHT_STYLES[parameter-brace]='fg=125'
+ZSH_HIGHLIGHT_STYLES[parameter-substitution]='fg=125'
+
+ZSH_HIGHLIGHT_STYLES[assign]='fg=white'
+ZSH_HIGHLIGHT_STYLES[assign-array]='fg=white'
+
+# Пути и файлы
+ZSH_HIGHLIGHT_STYLES[path]='fg=129,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=129'
+ZSH_HIGHLIGHT_STYLES[path_approx]='fg=161'       # 161 — ярко-фиолетовый
+ZSH_HIGHLIGHT_STYLES[glob]='fg=161'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=161'
+
+# Строки и кавычки
+ZSH_HIGHLIGHT_STYLES[string]='fg=129'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=129'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=129'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=129'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=129'
+ZSH_HIGHLIGHT_STYLES[unclosed_string]='fg=161,bold'
+
+# Подстановки и расширения
+ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=125'
+ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=125'
+ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=125'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=white,bold'
+
+# Перенаправления и спецсимволы
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=129'
+
+# Комментарии
+ZSH_HIGHLIGHT_STYLES[comment]='fg=129'
+
+# Ошибки и предупреждения
+ZSH_HIGHLIGHT_STYLES[unknown_command]='fg=161,bold'
+ZSH_HIGHLIGHT_STYLES[unknown_token]='fg=161,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=133'
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
