@@ -156,33 +156,70 @@ static const ResourcePref resources[] = {
 /* Default opacity levels         fg      bg     border */
 unsigned int default_alphas[] = { OPAQUE, 0xd0U, OPAQUE };
 
-
+// Фиолетовый
 static char *colors[SchemeLast][4] = {
 	/*                       fg         bg         border    */
-	[SchemeNorm]         = { "#E0E6ED", "#1E2A36", "#1E2A36" },
 
-	[SchemeTitleNorm]    = { "#E0E6ED", "#1E2A36", "#2B3E52" },
-	/* Фокус окна — ярче и насыщеннее */
-	[SchemeTitleSel]     = { "#FFFFFF", "#3478B5", "#4FA3E3" },
+	/* База — тёмный фиолетовый космос */
+	[SchemeNorm]         = { "#F6EDFF", "#0B0014", "#0B0014" },
 
-	[SchemeScratchNorm]  = { "#E0E6ED", "#1E2A36", "#2B3E52" },
-	[SchemeScratchSel]   = { "#FFFFFF", "#3478B5", "#4FA3E3" },
+	[SchemeTitleNorm]    = { "#F6EDFF", "#0B0014", "#220033" },
 
-	[SchemeHidNorm]      = { "#B0C4DE", "#1E2A36", "#000000" },
-	[SchemeHidSel]       = { "#E6F0FF", "#2F6FA6", "#4FA3E3" },
+	/* Фокус окна — плазменный разряд */
+	[SchemeTitleSel]     = { "#FFFFFF", "#B100FF", "#FF5CFF" },
 
-	/* Срочное — без изменений, уже контрастно */
-	[SchemeUrg]          = { "#F2F2F2", "#8A2E2E", "#8A2E2E" },
+	[SchemeScratchNorm]  = { "#F6EDFF", "#0B0014", "#220033" },
+	[SchemeScratchSel]   = { "#FFFFFF", "#B100FF", "#FF5CFF" },
 
-	/* Помеченные — слегка ярче */
-	[SchemeMarked]       = { "#CCE6FF", "#3A6FA0", "#3A6FA0" },
+	/* Скрытые — холодный ультрафиолет */
+	[SchemeHidNorm]      = { "#C9B3E6", "#0B0014", "#000000" },
+	[SchemeHidSel]       = { "#F2E8FF", "#8A00CC", "#FF5CFF" },
 
-	[SchemeWsNorm]       = { "#E0E6ED", "#1E2A36", "#000000" },
-	[SchemeWsVisible]    = { "#E6F0FF", "#2F6FA6", "#000000" },
-	/* Выбранный workspace — самый яркий */
-	[SchemeWsSel]        = { "#FFFFFF", "#3F8FD6", "#000000" },
-	[SchemeWsOcc]        = { "#B7D7E8", "#1E2A36", "#000000" },
+	/* Срочное — не красное, а «заряженное» */
+	[SchemeUrg]          = { "#FFFFFF", "#3A005A", "#0B0014" },
+
+	/* Помеченные — плотный энергетический фиолет */
+	[SchemeMarked]       = { "#EAD8FF", "#7A00B8", "#7A00B8" },
+
+	/* Workspaces */
+	[SchemeWsNorm]       = { "#F6EDFF", "#0B0014", "#000000" },
+	[SchemeWsVisible]    = { "#F2E8FF", "#6A0099", "#000000" },
+
+	/* Выбранный workspace — максимум энергии */
+	[SchemeWsSel]        = { "#FFFFFF", "#C400FF", "#000000" },
+
+	[SchemeWsOcc]        = { "#CFAEFF", "#0B0014", "#000000" },
 };
+
+
+// Синий
+//static char *colors[SchemeLast][4] = {
+//                        fg         bg         border    
+//	[SchemeNorm]         = { "#E0E6ED", "#1E2A36", "#1E2A36" },
+//
+//	[SchemeTitleNorm]    = { "#E0E6ED", "#1E2A36", "#2B3E52" },
+//	/* Фокус окна — ярче и насыщеннее */
+//	[SchemeTitleSel]     = { "#FFFFFF", "#3478B5", "#4FA3E3" },
+//
+//	[SchemeScratchNorm]  = { "#E0E6ED", "#1E2A36", "#2B3E52" },
+//	[SchemeScratchSel]   = { "#FFFFFF", "#3478B5", "#4FA3E3" },
+//
+//	[SchemeHidNorm]      = { "#B0C4DE", "#1E2A36", "#000000" },
+//	[SchemeHidSel]       = { "#E6F0FF", "#2F6FA6", "#4FA3E3" },
+//
+//	/* Срочное — без изменений, уже контрастно */
+//	[SchemeUrg]          = { "#F2F2F2", "#8A2E2E", "#8A2E2E" },
+//
+//	[SchemeUrg]          = { "#E0E6ED", "#1E2A36", "#1E2A36" },
+//	/* Помеченные — слегка ярче */
+//	[SchemeMarked]       = { "#CCE6FF", "#3A6FA0", "#3A6FA0" },
+//
+//	[SchemeWsNorm]       = { "#E0E6ED", "#1E2A36", "#000000" },
+//	[SchemeWsVisible]    = { "#E6F0FF", "#2F6FA6", "#000000" },
+//	/* Выбранный workspace — самый яркий */
+//	[SchemeWsSel]        = { "#FFFFFF", "#3F8FD6", "#000000" },
+//	[SchemeWsOcc]        = { "#B7D7E8", "#1E2A36", "#000000" },
+//};
 
 //static char *colors[SchemeLast][4] = {
 //	/*                       fg         bg         border    */
@@ -290,7 +327,7 @@ static const char *const autostart[] = {
 /* List of programs to start automatically during a restart only. These should usually be short
  * scripts that perform specific operations, e.g. changing a wallpaper. */
 static const char *const autorestart[] = {
-  "sh",         "-c",      "/home/uwuty/.fegbg", NULL, 
+//  "sh",         "-c",      "/home/uwuty/.fegbg", NULL, 
   NULL /* terminate */
 };
 

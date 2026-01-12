@@ -76,38 +76,56 @@ static const char mic[] = "muted=`wpctl get-volume @DEFAULT_SOURCE@ | awk '{prin
                             else printf \"MUTED\"; \
                             fi";
 
-static const struct arg args[] = {
-    /* function format          argument */
+//  static const struct arg args[] = {
+//      /* function format          argument */
 //	 { ipv4,          "| 󰈀 %s ",      "enp4s0" },
 //	 { wifi_perc,     "|   %s%% ",  "wlan0" },
-   { netspeed_rx,   "^c#B0E0E6^^b#B0E0E6^ ^c#000000^ %s/s ",        "enp4s0" },
-   { netspeed_tx,   " %s/s ",          "enp4s0" },
-   { keymap,        "^c#87CEEB^^b#87CEEB^ ^c#000000^󰌌 %s ",     NULL },
-   { run_command,   "^c#00bfff^^b#00bfff^ ^c#000000^ %s ",       "sensors k10temp-pci-00c3 | grep 'Tccd1:' | awk '{print $2}' | tr -d '+'" },
-   { run_command,   "^c#1E90FF^^b#1E90FF^ ^c#000000^󰢮 %s ",       "sensors amdgpu-pci-0500 | grep 'edge:' | awk '{print $2}' | tr -d '+'" },
-	 { cpu_perc,      "^c#00CED1^^b#00CED1^ ^c#000000^ %s%% ",   NULL },
-   { run_command,   "^c#7FFFD4^^b#7FFFD4^ ^c#000000^ %s",        "free -h | grep 'Mem:' | awk '{print $3}'" },
+//     { netspeed_rx,   "^c#B0E0E6^^b#B0E0E6^ ^c#000000^ %s/s ",        "enp4s0" },
+//     { netspeed_tx,   " %s/s ",          "enp4s0" },
+//     { keymap,        "^c#87CEEB^^b#87CEEB^ ^c#000000^󰌌 %s ",     NULL },
+//     { run_command,   "^c#00bfff^^b#00bfff^ ^c#000000^ %s ",       "sensors k10temp-pci-00c3 | grep 'Tccd1:' | awk '{print $2}' | tr -d '+'" },
+//     { run_command,   "^c#1E90FF^^b#1E90FF^ ^c#000000^󰢮 %s ",       "sensors amdgpu-pci-0500 | grep 'edge:' | awk '{print $2}' | tr -d '+'" },
+//  	 { cpu_perc,      "^c#00CED1^^b#00CED1^ ^c#000000^ %s%% ",   NULL },
+//     { run_command,   "^c#7FFFD4^^b#7FFFD4^ ^c#000000^ %s",        "free -h | grep 'Mem:' | awk '{print $3}'" },
 //	 { ram_perc,      "|  %s%% ",   NULL },
 //	 { battery_perc,  "|  %s%%",    "BAT0" },
 //	 { battery_state, "(%s) ",       "BAT0" },
 //	 { run_command,   "| 󰃝 %s%% ",   "xbacklight -get" },
 //	 { run_command,   "|   %s ",    vol },
 //	 { run_command,   "|  %s ",     mic },
-	 { datetime,      "^c#40E0D0^^b#40E0D0^ ^c#000000^ %s ",     "%a %F %T" }, /* Date time with this format: YYYY-MM-DD 18:00:00 */
+//  	 { datetime,      "^c#40E0D0^^b#40E0D0^ ^c#000000^ %s ",     "%a %F %T" }, /* Date time with this format: YYYY-MM-DD 18:00:00 */
+//};
+
+static const struct arg args[] = {
+    /* function        format                                           argument */
+
+    /* RX / TX — почти чёрный фиолет */
+    { netspeed_rx, "^c#5E3A8C^^b#5E3A8C^ ^c#000000^ %s/s ", "enp4s0" },
+    { netspeed_tx, " %s/s ",                                 "enp4s0" },
+
+    /* Keymap — тёмный violet */
+    { keymap, "^c#6F44A6^^b#6F44A6^ ^c#000000^󰌌 %s ", NULL },
+
+    /* CPU temp — насыщенный фиолет */
+    { run_command,
+      "^c#864FCE^^b#864FCE^ ^c#000000^ %s ",
+      "sensors k10temp-pci-00c3 | grep 'Tccd1:' | awk '{print $2}' | tr -d '+'" },
+
+    /* GPU temp — ближе к плазме */
+    { run_command,
+      "^c#9A4FFF^^b#9A4FFF^ ^c#000000^󰢮 %s ",
+      "sensors amdgpu-pci-0500 | grep 'edge:' | awk '{print $2}' | tr -d '+'" },
+
+    /* CPU usage — яркий violet */
+    { cpu_perc, "^c#B94CFF^^b#B94CFF^ ^c#000000^ %s%% ", NULL },
+
+    /* RAM — plasma magenta */
+    { run_command,
+      "^c#D94CFF^^b#D94CFF^ ^c#000000^ %s",
+      "free -h | grep 'Mem:' | awk '{print $3}'" },
+
+    /* Date / time — пик энергии */
+    { datetime,
+      "^c#FF4CFF^^b#FF4CFF^ ^c#000000^ %s ^c#FF4CFF^^b#0B0014^",
+      "%a %F %T" },
 };
-
-
-/*
-     function 	format          	argument 
-    //{disk_free,   "[ %s / ",           "/"},         
-    //{disk_total,  "%s] | ",           "/"},
-    {cpu_perc,    "^b#71d94c^^c#100548^  %s%% ",      NULL},
-    {ram_used,    "^b#e0af68^^c#71d94c^\ue0b0^c#15161e^  %s/",           NULL},
-    {ram_total,   "%s ",           NULL},
-    //{run_command, "[%s]",             "bash /home/toni/.local/bin/lukebin/statusbar/sb-memory"},
-    //{run_command, "[%s] | ",        "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g"},
-    {run_command, "^b#55cdfc^^c#e0af68^\ue0b0^c#000100^ %s ",      "/home/toni/.local/bin/lukebin/statusbar/sb-volume"},
-    {datetime,    "^b#bb9af6^^c#55cdfc^\ue0b0^c#000100^  %s ",           "%F"},
-    {datetime,	  "^b#f7768e^^c#bb9af6^\ue0b0^c#000100^  %s ^b#222222^^c#f7768e^\ue0b0",	"%T"}
-
-*/
