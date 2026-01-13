@@ -645,6 +645,7 @@ static Key keys[] = {
 	{ KeyPress,   MODKEY,                       XK_Return,       spawn,                  {.v = termcmd } }, // spawn a terminal
 	{ KeyPress,   MODKEY|Shift,                 XK_Return,       riospawn,               {.v = termcmd } }, // draw/spawn a terminal
 	{ KeyPress,   MODKEY,                       XK_b,            togglebar,              {0} }, // toggles the display of the bar(s) on the current monitor
+  { KeyPress,   MODKEY|Alt,                   XK_l,            spawn,                  SHCMD("sh ~/.i3lock &") },
 //  { KeyPress,   MODKEY,                       XK_t,            spawn,                  {.v = spcmd_t } },
   { KeyPress,   MODKEY,                       XK_x,            spawn,                  SHCMD("xpointerbarrier 0 0 0 0") },
   { KeyPress,   MODKEY,                       XK_c,            spawn,                  SHCMD("pkill xpointerbarrier") },

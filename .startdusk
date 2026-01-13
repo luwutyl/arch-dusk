@@ -15,6 +15,7 @@ feh --no-fehbg --bg-fill /home/uwuty/data/normalniy_foto/wallpaper/abstract/purp
 # автозаупуск приложений
 firefox &
 throne &
+Telegram -startintray &
 
 # статус бар
 slstatus &
@@ -30,5 +31,8 @@ picom &
 
 # уведомления
 dunst &
+
+# отключиь выключение экрана
+xset s off -dpms &
 
 exec dusk
