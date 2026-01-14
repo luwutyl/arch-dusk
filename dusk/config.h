@@ -92,8 +92,7 @@ static uint64_t functionality = 0
 	|SpawnCwd // spawn applications in the currently selected client's working directory
 	|ColorEmoji // enables color emoji support (removes Xft workaround)
 	|Status2DNoAlpha // option to not use alpha when drawing status2d status
-	|BarBorder // draw a border around the bar
-//	|BarBorderColBg // optionally use the bar background colour for the bar border (rather than border colour)
+	|BarBorder // draw a border around the bar |BarBorderColBg // optionally use the bar background colour for the bar border (rather than border colour)
 	|BarPadding // add vertical and side padding as per vertpad and sidepad variables above
 //	|NoBorders // as per the noborder patch, show no border when only one client in tiled mode
 	|Warp // warp cursor to currently focused window
